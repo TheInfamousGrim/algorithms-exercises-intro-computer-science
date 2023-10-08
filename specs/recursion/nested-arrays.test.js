@@ -10,10 +10,24 @@
  */
 
 function nestedAdd(array) {
-  // write code here
+  // base cases
+  if (array.length === 0) {
+    return 0;
+  }
+
+  if (typeof array === "number") {
+    return array;
+  }
+
+  // recursive case
+  if (array.length === 1) {
+    return nestedAdd(array[0]);
+  } else {
+    return nestedAdd(array[0]) + nestedAdd(array.slice(1));
+  }
 }
 
-test.skip("nested arrays addition", () => {
+test("nested arrays addition", () => {
   expect(nestedAdd([1, 2, 3])).toEqual(6);
   expect(nestedAdd([1, [2], 3])).toEqual(6);
   expect(nestedAdd([[[[[[[[[5]]]]]]]]])).toEqual(5);
