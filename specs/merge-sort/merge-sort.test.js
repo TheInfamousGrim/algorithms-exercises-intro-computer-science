@@ -16,10 +16,10 @@ const merge = (left, right) => {
   while (left.length && right.length) {
     // Find the lower value
     if (left[0] < right[0]) {
-      // Add the lower value to the new array
+      // Add the lower value to the end of the new array
       merged.push(left.shift());
     } else {
-      // Add the lower value to the new array
+      // Add the lower value to the end of the new array
       merged.push(right.shift());
     }
   }
